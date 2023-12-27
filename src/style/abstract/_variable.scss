@@ -1,47 +1,13 @@
 /* ====================================
 Variable
 ---------------------------------------
-Purpose:
-- eliminate use of magic number
-- contains all global variables
----------------------------------------
-Guidelines:
-- local variables should not be declared here
----------------------------------------
 Sections:
-- Typography
 - Breakpoints
+- Typography
 - Styles
 - Colors
 ==================================== */
-
-/* Section 1: Typography 
-https://typescale.com/ <-- use this handy link to set font styles!
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap");
-// for screen > medium
-$base-font-size: 16px;
-$secondary-font-size: 14px;
-$tertiary-font-size: 12px;
-// for screen < medium
-$base-font-size-small-screen: 14px;
-$secondary-font-size-small-screen: 13px;
-$tertiary-font-size-small-screen: 12px;
-$base-line-height: 1.4;
-$type-scale: 1.25; // major third
-$type-base-size: 1rem;
-$base-font-family: "Montserrat", sans-serif;
-$font-weight: (
-  "thin": 200,
-  "regular": 400,
-  "semiBold": 600,
-  "bold": 700,
-);
-
-/* Section 2: Breakpoints */
-
-/*
+/* Breakpoints 
 |----|----|----|---->
 0   576  768  991
 breakpoints using bootstrap standards
@@ -53,6 +19,34 @@ $breakpoints: (
   "large": 993px,
 );
 
+/* Section 2: Typography 
+https://typescale.com/ <-- use this handy link to set font styles!
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap");
+
+// Small
+$base-font-size: 16px;
+$secondary-font-size: 12px;
+
+// Medium
+$base-font-size-med: 18px;
+$secondary-font-size-med: 14px;
+
+// Large
+$base-font-size-lg: 20px;
+$secondary-font-lg: 16px;
+
+$base-line-height: 1.4;
+$type-scale: 1.25; // major third
+$type-base-size: 1rem;
+$base-font-family: "Montserrat", sans-serif;
+$secondary-font-family: "Source Sans 3", sans-serif;
+$font-weight: (
+  "regular": 400,
+  "semiBold": 600,
+  "bold": 700,
+);
+
 /* Section 3: Styles */
 
 // transitions
@@ -60,49 +54,28 @@ $default-transition-time: 0.3s;
 $default-transition: all $default-transition-time ease;
 // z-index
 $bottom: 0;
-$low: 10;
-$mid: 100;
-$high: 200;
+$mid: 500;
 $top: 1000;
-// box-shadow
-$default-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 
-/* Colors */
+/* Section 4: Colors */
 
-/* Theme */
+//Theme
+$theme: (
+  "primary": #ffe81d,
+  "primary-v": #ffb800,
+  "secondary": #ff84a9,
+  "secondary-v": #cc7db6,
+  "tertiary": #41ffdd,
+  "tertiary-v": #5eb1df,
+);
 
-$primary: #cbd674;
-$primary-variant: #d5e366;
-$secondary: #0a183a;
-$secondary-variant: #122a65;
-
-/* Shades */
-
+//Shades
 $opacity: (
-  "high-emphasis": 0.87,
-  "medium": 0.65,
-  "disabled": 0.38,
+  "high": 0.8,
+  "medium": 0.6,
+  "low": 0.4,
 );
 
-/* Common */
-
-$surface: white;
-$background: #f2f2f2;
-$on-light: black;
-$on-dark: white;
-$error: #e5383b;
-$error-variant: #f35658;
-$on-error: white;
-$warning: #ffca3a;
-// data vis
-$status: (
-  "normal": #38bf8b,
-  "alert": #ffca3a,
-  "offline": #ff595e,
-);
-$vis: (
-  "0": #574477,
-  "1": #b34a80,
-  "2": #f7625a,
-  "3": #ffa600,
-);
+//Common
+$light-bg: #fbfbfb;
+$dark-bg: #00132a;

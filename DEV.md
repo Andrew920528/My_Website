@@ -4,15 +4,6 @@ Notes to future self
 
 ## Project Organization
 
-- Components: Any reusable ui element
-- Configs: Project data, constants
-- Features: Global state management
-- Models: Data objects
-- Pages: Each section/ page of the project
-- Services: api/ external calls
-- Style: Styling management
-- Utils: Anything useful
-
 ```bash
 src
 ├── components  # Contains any reusable ui element

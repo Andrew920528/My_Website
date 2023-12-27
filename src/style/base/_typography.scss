@@ -1,12 +1,5 @@
 /* ====================================
-Typography
----------------------------------------
-Purpose:
-- Initialize typography to some default values
----------------------------------------
-Guidelines:
-- We want to be able to style fonts flexibiliy,
-so rules here should just be the default
+Typography - sets default typography
 ---------------------------------------
 Sections:
 - Base
@@ -16,7 +9,6 @@ Sections:
 ==================================== */
 
 @use "../abstract/index" as *;
-@use "sass:map";
 html {
   @include base-font-size;
 }
@@ -24,23 +16,14 @@ html {
 body {
   line-height: $base-line-height;
   font-family: $base-font-family;
+  font-weight: map-get($font-weight, "regular");
+  font-size: $type-base-size;
 }
 
-/**
- * Text Boxes
- */
-
+/* Text Boxes */
 a,
 p {
-  margin: 0;
-  font-weight: map.get($font-weight, "regular");
-  font-size: $type-base-size;
-  color: rgba($on-light, map.get($opacity, "medium"));
-}
-
-div {
-  font-weight: map.get($font-weight, "regular");
-  font-size: $type-base-size;
+  color: rgba(black, map-get($opacity, "high"));
 }
 
 /**
@@ -54,18 +37,7 @@ $level-size: $type-base-size;
   $level-size: $level-size * $type-scale;
   h#{$level} {
     font-size: $level-size;
-    font-weight: map.get($font-weight, "semiBold");
-    margin: 0;
     text-rendering: optimizelegibility; // Fix the character spacing for headings
-    color: rgba($on-light, map.get($opacity, "high-emphasis"));
+    color: black;
   }
-}
-
-/**
-* Table Content
-*/
-
-th,
-td {
-  @include secondary-font-size;
 }
