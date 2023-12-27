@@ -1,0 +1,108 @@
+/* ====================================
+Title: Variable
+---------------------------------------
+Purpose:
+- eliminate use of magic number
+- contains all global variables
+---------------------------------------
+Guidelines:
+- local variables should not be declared here
+---------------------------------------
+Sections:
+- Typography
+- Breakpoints
+- Styles
+- Colors
+==================================== */
+
+/* Section 1: Typography 
+https://typescale.com/ <-- use this handy link to set font styles!
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap");
+// for screen > medium
+$base-font-size: 16px;
+$secondary-font-size: 14px;
+$tertiary-font-size: 12px;
+// for screen < medium
+$base-font-size-small-screen: 14px;
+$secondary-font-size-small-screen: 13px;
+$tertiary-font-size-small-screen: 12px;
+$base-line-height: 1.4;
+$type-scale: 1.25; // major third
+$type-base-size: 1rem;
+$base-font-family: "Montserrat", sans-serif;
+$font-weight: (
+  "thin": 200,
+  "regular": 400,
+  "semiBold": 600,
+  "bold": 700,
+);
+
+/* Section 2: Breakpoints */
+
+/*
+|----|----|----|---->
+0   576  768  991
+breakpoints using bootstrap standards
+*/
+
+$breakpoints: (
+  "small": 576px,
+  "medium": 768px,
+  "large": 993px,
+);
+
+/* Section 3: Styles */
+
+// transitions
+$default-transition-time: 0.3s;
+$default-transition: all $default-transition-time ease;
+// z-index
+$bottom: 0;
+$low: 10;
+$mid: 100;
+$high: 200;
+$top: 1000;
+// box-shadow
+$default-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+/* Colors */
+
+/* Theme */
+
+$primary: #cbd674;
+$primary-variant: #d5e366;
+$secondary: #0a183a;
+$secondary-variant: #122a65;
+
+/* Shades */
+
+$opacity: (
+  "high-emphasis": 0.87,
+  "medium": 0.65,
+  "disabled": 0.38,
+);
+
+/* Common */
+
+$surface: white;
+$background: #f2f2f2;
+$on-light: black;
+$on-dark: white;
+$error: #e5383b;
+$error-variant: #f35658;
+$on-error: white;
+$warning: #ffca3a;
+// data vis
+$status: (
+  "normal": #38bf8b,
+  "alert": #ffca3a,
+  "offline": #ff595e,
+);
+$vis: (
+  "0": #574477,
+  "1": #b34a80,
+  "2": #f7625a,
+  "3": #ffa600,
+);
