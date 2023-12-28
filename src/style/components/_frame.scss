@@ -1,0 +1,16 @@
+@use "../abstract/variable" as *;
+@use "../abstract/mixin" as *;
+.frame {
+  padding: 0;
+}
+
+.frame-border-wrap {
+  background: linear-gradient(
+    to bottom,
+    map-get($map: $theme, $key: "primary"),
+    map-get($map: $theme, $key: "secondary")
+  );
+  width: 100%;
+  border-radius: 7px;
+  padding: 2px;
+}

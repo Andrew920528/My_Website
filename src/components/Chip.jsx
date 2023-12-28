@@ -7,7 +7,7 @@ const Chip = ({text}) => {
         sx={{
           bgcolor: "background.default",
           color: "text.primary",
-          borderRadius: "50px",
+          borderRadius: "48px",
         }}
       >
         <div className="chip">
