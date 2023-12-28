@@ -1,0 +1,22 @@
+@use "../abstract/variable" as *;
+@use "../abstract/mixin" as *;
+.chip {
+  padding: 0.1rem 0.7rem;
+  p {
+    @include base-font-size;
+    font-weight: map-get($map: $font-weight, $key: "semiBold");
+    font-family: $secondary-font-family;
+    text-align: center;
+  }
+}
+
+.chip-border-wrap {
+  background: linear-gradient(
+    to right,
+    map-get($map: $theme, $key: "secondary-v"),
+    map-get($map: $theme, $key: "tertiary-v")
+  );
+  border-radius: 50px;
+  padding: 2px;
+  display: inline-block;
+}
