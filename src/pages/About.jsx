@@ -2,10 +2,11 @@ import React from "react";
 import {Box, Card, Typography} from "@mui/material";
 import Chip from "../components/Chip";
 import Frame from "../components/Frame";
+import Header from "../components/Header";
 const About = () => {
   return (
     <div className="about">
-      About
+      <Header title={"About"}></Header>
       <Chip text={"Hello"}></Chip>
       <Frame>
         <div>Frame</div>
