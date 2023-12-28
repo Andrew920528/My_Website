@@ -16,7 +16,6 @@ body {
   line-height: $base-line-height;
   font-family: $base-font-family;
   font-weight: map-get($font-weight, "regular");
-  font-size: $type-base-size;
 }
 
 a,

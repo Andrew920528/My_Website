@@ -1,0 +1,36 @@
+@use "../abstract/index" as *;
+.rect-button {
+  display: inline-block;
+  align-items: center;
+  background-color: aliceblue;
+
+  padding: 0;
+  display: inline-block;
+  border: none;
+  background: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &.disable {
+    opacity: map-get($map: $opacity, $key: "low");
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+.rect-button-wrapper {
+  background: linear-gradient(
+    to right,
+    map-get($map: $theme, $key: "primary-v"),
+    map-get($map: $theme, $key: "secondary-v")
+  );
+  border-radius: 7px;
+  padding: 3px;
+  p {
+    padding: 0.75rem 1.75rem;
+    font-family: $secondary-font-family;
+    font-size: 1.25rem;
+    font-weight: map-get($map: $font-weight, $key: "semiBold");
+  }
+}
