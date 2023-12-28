@@ -1,0 +1,14 @@
+.mobile-top {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+
+  justify-content: space-between;
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}

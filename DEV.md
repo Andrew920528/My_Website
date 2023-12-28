@@ -25,4 +25,4 @@ src
 Thoughts that lead to greatness, goes here
 
 - _Cleanliness is a state of purity, clarity, and precision_
-- _給現在的自己：如果一時不知道怎麼做，就先隨便做吧！到時候的我就會知道怎麼做了_
+- 給現在的自己：如果一時不知道怎麼做，就先隨便做吧！到時候的我就會知道怎麼做了

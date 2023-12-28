@@ -3,7 +3,6 @@ Typography - sets default typography
 ---------------------------------------
 Sections:
 - Base
-- Text Boxes
 - Headings
 - Table Content
 ==================================== */
@@ -20,10 +19,14 @@ body {
   font-size: $type-base-size;
 }
 
-/* Text Boxes */
 a,
-p {
-  color: rgba(black, map-get($opacity, "high"));
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -38,6 +41,5 @@ $level-size: $type-base-size;
   h#{$level} {
     font-size: $level-size;
     text-rendering: optimizelegibility; // Fix the character spacing for headings
-    color: black;
   }
 }

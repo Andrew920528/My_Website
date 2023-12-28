@@ -79,3 +79,8 @@ $opacity: (
 //Common
 $light-bg: #fbfbfb;
 $dark-bg: #00132a;
+
+:export {
+  light_bg: $light-bg;
+  dark_bg: $dark-bg;
+}
