@@ -14,7 +14,7 @@ const Contact = () => {
         placeholder={"Enter your message"}
         multiline={true}
       />
-      <RectButton text={"Send"} />
+      <RectButton text={"Send"} align={"center"} />
     </div>
   );
 };

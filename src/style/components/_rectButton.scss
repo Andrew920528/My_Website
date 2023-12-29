@@ -1,4 +1,18 @@
 @use "../abstract/index" as *;
+.button-pos-handler {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &.center {
+    align-items: center;
+  }
+  &.start {
+    align-items: start;
+  }
+  &.end {
+    align-items: end;
+  }
+}
 .rect-button {
   display: inline-block;
   align-items: center;
