@@ -1,0 +1,47 @@
+@use "../abstract/index" as *;
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  .footer-line {
+    height: 1px;
+    width: 100%;
+    background: white;
+  }
+  .socialIcons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    *:hover {
+      cursor: pointer;
+    }
+  }
+  .copyright {
+    font-size: 0.7rem;
+    font-family: $secondary-font-family;
+  }
+}
+
+.footer-icon-with-link {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  .icon {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .text {
+    text-decoration: underline;
+    @include secondary-font-size;
+    font-family: $secondary-font-family;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

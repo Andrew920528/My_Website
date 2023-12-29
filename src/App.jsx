@@ -11,6 +11,7 @@ import Experience from "./pages/Experience";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import MobileTop from "./components/MobileTop";
+import Footer from "./components/Footer";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -46,6 +47,7 @@ function App() {
             <Experience></Experience>
             <Projects></Projects>
             <Contact></Contact>
+            <Footer darkMode={darkMode}></Footer>
           </div>
         </div>
       </Box>
