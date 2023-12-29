@@ -13,4 +13,11 @@
   width: 100%;
   border-radius: 7px;
   padding: 2px;
+  &.info {
+    background: linear-gradient(
+      to right,
+      map-get($map: $theme, $key: "tertiary"),
+      map-get($map: $theme, $key: "tertiary-v")
+    );
+  }
 }

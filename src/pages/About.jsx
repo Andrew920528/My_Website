@@ -11,7 +11,14 @@ const About = () => {
       <Frame>
         <div>Frame</div>
       </Frame>
-      <RectButton text={"Button"} onClick={() => {}}></RectButton>
+      <Frame type={"info"}>
+        <div>Info</div>
+      </Frame>
+      <RectButton
+        text={"Button"}
+        onClick={() => {}}
+        align={"start"}
+      ></RectButton>
     </div>
   );
 };

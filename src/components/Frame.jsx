@@ -1,8 +1,8 @@
 import React from "react";
 import {Box} from "@mui/material";
-const Frame = ({children}) => {
+const Frame = ({type, children}) => {
   return (
-    <div className="frame-border-wrap">
+    <div className={`frame-border-wrap ${type}`}>
       <Box
         sx={{
           bgcolor: "background.default",
