@@ -1,6 +1,9 @@
 import React from "react";
+import {useTheme} from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 const InputBlock = ({title, placeholder, multiline}) => {
+  const theme = useTheme();
+  console.log(theme.mode);
   return (
     <div className="input-block">
       <p>{title}</p>
@@ -8,11 +11,14 @@ const InputBlock = ({title, placeholder, multiline}) => {
         <div className="input-field-container">
           {multiline ? (
             <textarea
-              className="input-field"
+              className={`input-field ${theme.mode}`}
               placeholder={placeholder}
             ></textarea>
           ) : (
-            <input className="input-field" placeholder={placeholder} />
+            <input
+              className={`input-field ${theme.mode}`}
+              placeholder={placeholder}
+            />
           )}
         </div>
       </div>

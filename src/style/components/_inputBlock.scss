@@ -38,11 +38,24 @@
     &:focus {
       outline: none;
     }
-
     &::placeholder {
-      //font-weight: map-get($map: $font-weight, $key: "semiBold");
       opacity: 0.8;
       font-family: $secondary-font-family;
+    }
+
+    &.light {
+      color: black;
+      background-color: $light-bg;
+      &::placeholder {
+        color: black;
+      }
+    }
+    &.dark {
+      color: white;
+      background-color: $dark-bg;
+      &::placeholder {
+        color: white;
+      }
     }
   }
 }

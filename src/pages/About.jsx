@@ -6,7 +6,7 @@ import RectButton from "../components/RectButton";
 const About = () => {
   return (
     <div className="about">
-      <Header title={"About"}></Header>
+      <Header title={"About Me"}></Header>
       <Chip text={"Hello"}></Chip>
       <Frame>
         <div>Frame</div>
