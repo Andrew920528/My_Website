@@ -17,6 +17,12 @@
       cursor: default;
     }
   }
+  p {
+    padding: 0.75rem 1.75rem;
+    font-family: $secondary-font-family;
+    font-size: 1.25rem;
+    font-weight: map-get($map: $font-weight, $key: "semiBold");
+  }
 }
 
 .rect-button-wrapper {
@@ -27,10 +33,4 @@
   );
   border-radius: 7px;
   padding: 3px;
-  p {
-    padding: 0.75rem 1.75rem;
-    font-family: $secondary-font-family;
-    font-size: 1.25rem;
-    font-weight: map-get($map: $font-weight, $key: "semiBold");
-  }
 }

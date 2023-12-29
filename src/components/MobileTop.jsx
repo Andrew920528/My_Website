@@ -1,4 +1,4 @@
-import React, {forwardRef} from "react";
+import React from "react";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import IconButton from "@mui/material/IconButton";
 import TranslateIcon from "@mui/icons-material/Translate";

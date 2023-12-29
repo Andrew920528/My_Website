@@ -2,7 +2,6 @@ import {useState, useMemo} from "react";
 import "./style/main.scss";
 import {ThemeProvider} from "@mui/material/styles";
 import {createTheme} from "@mui/material/styles";
-import Switch from "@mui/material/Switch";
 import About from "./pages/About";
 import {Box} from "@mui/material";
 import variables from "./style/abstract/_variable.scss";

@@ -1,5 +1,4 @@
-@use "../abstract/variable" as *;
-@use "../abstract/mixin" as *;
+@use "../abstract/index" as *;
 .chip {
   padding: 0.1rem 0.7rem;
   p {

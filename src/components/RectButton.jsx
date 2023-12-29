@@ -6,7 +6,7 @@ const RectButton = ({text, onClick}) => {
     <button
       className={`rect-button ${loading && "disable"}`}
       onClick={async (e) => {
-        if (!loading) {
+        if (!loading && onClick) {
           setLoading(true);
           await onClick(e);
           setLoading(false);
