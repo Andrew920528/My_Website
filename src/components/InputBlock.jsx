@@ -3,7 +3,7 @@ import {useTheme} from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 const InputBlock = ({title, placeholder, multiline}) => {
   const theme = useTheme();
-  console.log(theme.mode);
+
   return (
     <div className="input-block">
       <p>{title}</p>
