@@ -38,6 +38,16 @@
         }
       }
     }
+    .courses-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+
+      .courses {
+        font-family: $secondary-font-family;
+        font-weight: map-get($map: $font-weight, $key: "bold");
+      }
+    }
   }
 }
 .about-section-block {
@@ -54,5 +64,43 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+}
+
+.expandable-chips-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  .collapsed {
+    mask-image: -webkit-gradient(
+      linear,
+      left 60%,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
+    );
+  }
+  .expandable-chips {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  .expand-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      text-decoration: underline;
+      font-family: $secondary-font-family;
+      font-weight: map-get($map: $font-weight, $key: "semiBold");
+    }
+    .down-icon {
+      transition: all 0.2s ease;
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
   }
 }
