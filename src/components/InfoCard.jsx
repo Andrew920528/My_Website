@@ -1,29 +1,27 @@
 import React from "react";
 import Frame from "./Frame";
-import placeholder from "../images/placeholder.jpg";
 import Chip from "./Chip";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import {Link} from "@mui/material";
 import {useTheme} from "@emotion/react";
-const InfoCard = () => {
-  const skills = [
-    "React",
-    "HTML",
-    "JavaScript",
-    "SASS",
-    "PostgreSQL",
-    "Postman",
-    "Python",
-    "API Development",
-  ];
+const InfoCard = ({
+  image,
+  sub1,
+  title,
+  sub2,
+  description,
+  skills,
+  site,
+  youtube,
+  github,
+}) => {
   const LinkWithIcon = ({icon, text, url}) => {
     const theme = useTheme();
     return (
       <div className="link-with-icon">
         <div className="icon-wrapper">{icon}</div>
-        <a href={url} className={theme.mode}>
+        <a href={url} className={theme.mode} target="_blank">
           {text}
         </a>
       </div>
@@ -34,28 +32,22 @@ const InfoCard = () => {
       <Frame>
         <div className="image-wrapper">
           <img
-            src={placeholder}
+            src={image}
             alt="info-card"
             style={{objectPosition: "50% 50%"}} // default cropping pivot
           />
         </div>
         <div className="card-content">
           <div className="info-block-title">
-            <p className="subtitle-1"> 2023 May - 2023 Aug </p>
-            <h3> Nexuni Co. Ltd.</h3>
+            <p className="subtitle-1">{sub1} </p>
+            <h3> {title} </h3>
             <p className="subtitle-2">
-              <i>Full Stack Software Developer</i>
+              <i>{sub2}</i>
             </p>
           </div>
           <div className="div-line" />
           <div className="info-block-description">
-            <p>
-              Working on an agile dev team, we built an image classification app
-              that identify car parts and improved its accuracy to about 75%. I
-              gained hands-on experience with using Google Cloud APIs and
-              various software for image classification such as OpenCV and
-              tensorflow.
-            </p>
+            <p>{description}</p>
             <p className="learn-more">Learn More</p>
           </div>
           <div className="div-line" />
@@ -66,21 +58,27 @@ const InfoCard = () => {
           </div>
           <div className="div-line" />
           <div className="links">
-            <LinkWithIcon
-              icon={<OpenInNewIcon />}
-              text={"Organization Site"}
-              url={"a"}
-            />
-            <LinkWithIcon
-              icon={<YouTubeIcon />}
-              text={"Demo Video"}
-              url={"b"}
-            />
-            <LinkWithIcon
-              icon={<GitHubIcon />}
-              text={"Github Repository"}
-              url={"c"}
-            />
+            {site && (
+              <LinkWithIcon
+                icon={<OpenInNewIcon />}
+                text={"Organization Site"}
+                url={site}
+              />
+            )}
+            {youtube && (
+              <LinkWithIcon
+                icon={<YouTubeIcon />}
+                text={"Demo Video"}
+                url={"b"}
+              />
+            )}
+            {github && (
+              <LinkWithIcon
+                icon={<GitHubIcon />}
+                text={"Github Repository"}
+                url={"c"}
+              />
+            )}
           </div>
         </div>
       </Frame>
