@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import MobileTop from "./components/MobileTop";
 import Footer from "./components/Footer";
+import MobileNav from "./components/MobileNav";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -49,6 +50,7 @@ function App() {
             <Contact></Contact>
             <Footer darkMode={darkMode}></Footer>
           </div>
+          <MobileNav />
         </div>
       </Box>
     </ThemeProvider>

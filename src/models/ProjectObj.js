@@ -1,21 +1,21 @@
-export function ExperienceObj({
-  company,
-  start,
-  end,
+export function ProjectObj({
+  projectName,
+  event,
   role,
   description,
   skills,
-  site,
+  github,
+  youtube,
   image,
   pivot,
 }) {
-  this.company = company;
-  this.start = start;
-  this.end = end;
+  this.projectName = projectName;
+  this.event = event;
   this.role = role;
   this.description = description;
   this.skills = skills;
-  this.site = site;
+  this.github = github;
+  this.youtube = youtube;
   this.image = image;
   this.pivot = pivot;
 }

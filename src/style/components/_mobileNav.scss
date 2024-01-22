@@ -1,0 +1,16 @@
+@use "../abstract/index" as *;
+.section-label {
+  display: flex;
+  flex-direction: column;
+  //gap: 0.5rem;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  p {
+    @include secondary-font-size;
+    font-family: $secondary-font-family;
+  }
+}

@@ -15,6 +15,7 @@ const InfoCard = ({
   site,
   youtube,
   github,
+  pivot,
 }) => {
   const LinkWithIcon = ({icon, text, url}) => {
     const theme = useTheme();
@@ -34,7 +35,7 @@ const InfoCard = ({
           <img
             src={image}
             alt="info-card"
-            style={{objectPosition: "50% 50%"}} // default cropping pivot
+            style={{objectPosition: pivot ? pivot : "50% 50%"}} // default cropping pivot
           />
         </div>
         <div className="card-content">
@@ -69,14 +70,14 @@ const InfoCard = ({
               <LinkWithIcon
                 icon={<YouTubeIcon />}
                 text={"Demo Video"}
-                url={"b"}
+                url={youtube}
               />
             )}
             {github && (
               <LinkWithIcon
                 icon={<GitHubIcon />}
                 text={"Github Repository"}
-                url={"c"}
+                url={github}
               />
             )}
           </div>

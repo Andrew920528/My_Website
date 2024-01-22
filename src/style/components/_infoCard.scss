@@ -46,13 +46,13 @@
     img {
       border-radius: 5px 5px 0 0;
       object-fit: cover;
-      height: 7rem;
+      height: 9rem;
     }
   }
   .image-wrapper::after {
     content: "";
     position: absolute;
-    box-shadow: inset 0px -4rem 3rem -3rem #000;
+    box-shadow: inset 0px -4rem 3rem -3rem #1f1f1f;
     inset: 0;
   }
 
