@@ -12,5 +12,23 @@
   p {
     @include secondary-font-size;
     font-family: $secondary-font-family;
+    &.selected {
+      color: map-get($map: $theme, $key: "secondary-v");
+    }
+  }
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+
+  &.dark {
+    background-color: rgba($color: #000, $alpha: 0.7);
+  }
+  &.light {
+    background-color: rgba($color: #fff, $alpha: 0.7);
   }
 }

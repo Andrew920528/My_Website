@@ -84,4 +84,6 @@ $dark-bg: #00132a;
 :export {
   light_bg: $light-bg;
   dark_bg: $dark-bg;
+  primary_v: map-get($map: $theme, $key: "primary-v");
+  secondary_v: map-get($map: $theme, $key: "secondary-v");
 }
