@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import gtLogo from "../images/gt_logo.png";
 import Collapse from "@mui/material/Collapse";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import {Skill} from "../global/constants";
 const About = () => {
   const GoalsContent = () => (
     <div className="goals">
@@ -68,18 +69,7 @@ const About = () => {
 
   const SkillContent = () => {
     const [skillExpand, setSkillExpand] = useState(false);
-    const skills = [
-      "React",
-      "JavaScript",
-      "CSS",
-      "SASS",
-      "HTML",
-      "Java",
-      "Python",
-      "C",
-      "SQL",
-      "Git",
-    ];
+    const skills = Object.values(Skill);
     const toggleSkill = () => {
       setSkillExpand((prev) => !prev);
     };

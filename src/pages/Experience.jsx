@@ -9,6 +9,7 @@ import coc_logo from "../images/coc.png";
 import gpc_logo from "../images/gpc.png";
 import nex_logo from "../images/nexuni.png";
 import ddsc_logo from "../images/ddsc.png";
+import {RESUME_LINK, Skill} from "../global/constants";
 
 const dsmc = new ExperienceObj({
   company: "Dimerco Data System Corp",
@@ -18,7 +19,13 @@ const dsmc = new ExperienceObj({
   description: `I worked on projects that streamlines the company's operations.
                 Specifically, I used Selenium to create a web scraper for package management and
                 leveraged OpenAi Whisper to convert meeting recordings into text`,
-  skills: ["React", "Selenium", "Python", "AI", "API Development"],
+  skills: [
+    Skill.REACT,
+    Skill.SELENIUM,
+    Skill.PYTHON,
+    Skill.AI,
+    Skill.API_DEVELOPMENT,
+  ],
   site: "https://www.nexuni.com/MainPage",
   image: ddsc_logo,
 });
@@ -35,14 +42,14 @@ const nexuni = new ExperienceObj({
                 interactive GUI to organizing data collected from 
                 sensor and API development. `,
   skills: [
-    "React",
-    "HTML",
-    "JavaScript",
-    "SASS",
-    "PostgreSQL",
-    "Postman",
-    "Python",
-    "API Development",
+    Skill.REACT,
+    Skill.HTML,
+    Skill.JAVASCRIPT,
+    Skill.SASS,
+    Skill.POSTGRESQL,
+    Skill.POSTMAN,
+    Skill.PYTHON,
+    Skill.API_DEVELOPMENT,
   ],
   site: "https://www.nexuni.com/MainPage",
   image: nex_logo,
@@ -59,15 +66,16 @@ const gpc = new ExperienceObj({
         various software for image classification such as OpenCV and
         tensorflow.`,
   skills: [
-    "Java",
-    "Spingboot",
-    "JavaScript",
-    "Google Cloud Platform",
-    "OpenCV",
-    "Python",
-    "Tensorflow",
-    "Android Studio",
-    "Git",
+    Skill.JAVA,
+    Skill.SPRINGBOOT,
+    Skill.JAVASCRIPT,
+    Skill.GOOGLE_CLOUD_PLATFORM,
+    Skill.OPENCV,
+    Skill.PYTHON,
+    Skill.TENSORFLOW,
+    Skill.ANDROID_STUDIO,
+    Skill.GIT,
+    Skill.IMAGE_CLASSIFICATION,
   ],
   site: "https://www.genpt.com/",
   image: gpc_logo,
@@ -87,6 +95,9 @@ const gtcoc = new ExperienceObj({
 
 const Experience = () => {
   const experiences = [dsmc, nexuni, gpc, gtcoc];
+  function viewResume() {
+    window.open(RESUME_LINK, "_blank");
+  }
   return (
     <div className="experience">
       <Header title={"Experience"} />
@@ -95,7 +106,13 @@ const Experience = () => {
           These experiences are the building blocks of my engineering journey,
           each shaping my skills and perspective.
         </h3>
-        <RectButton text={"View Resume"} onClick={() => {}} align={"center"} />
+        <RectButton
+          text={"View Resume"}
+          onClick={() => {
+            viewResume();
+          }}
+          align={"center"}
+        />
       </div>
       <div className="experience-cards">
         {experiences.map((exp) => (

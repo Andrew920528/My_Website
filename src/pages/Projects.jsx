@@ -7,19 +7,20 @@ import iplantitImg from "../images/iplantit.png";
 import hygeiaImg from "../images/hygeia.png";
 import plantomoImg from "../images/plantomo_img.png";
 import ritaImg from "../images/rita.png";
+import {Skill} from "../global/constants";
 const rita = new ProjectObj({
   projectName: "Rita",
   event: "IBM Call for Code 2024",
   role: "Project Lead",
   description: `The award winning application that transforms how teachers prepare for their classes.`,
   skills: [
-    "React",
-    "Typescript",
-    "AI",
-    "Langchain",
-    "Python",
-    "AWS",
-    "API Development",
+    Skill.REACT,
+    Skill.TypeScript,
+    Skill.AI,
+    Skill.LANGCHAIN,
+    Skill.PYTHON,
+    Skill.AWS,
+    Skill.API_DEVELOPMENT,
   ],
   github: "https://github.com/Andrew920528/rita-cfc-2024",
   youtube: "https://www.youtube.com/watch?v=spGOiM32nGE",
@@ -42,12 +43,12 @@ const plantomo = new ProjectObj({
                 avatars “plantomo” and worked on the 
                 UI/UX of the game.`,
   skills: [
-    "Unity",
-    "C#",
-    "Firebase",
-    "MapboxSDK",
-    "Augmented Reality",
-    "Image Classification",
+    Skill.UNITY,
+    Skill.CSHARP,
+    Skill.FIREBASE,
+    Skill.MAPBOXSDK,
+    Skill.AUGMENTED_REALITY,
+    Skill.IMAGE_CLASSIFICATION,
   ],
   github: "https://github.com/Andrew920528/GDSC2023",
   youtube: "https://www.youtube.com/watch?v=8LHcoZL0cPo",
@@ -66,7 +67,7 @@ const iplantit = new ProjectObj({
                 their garden design, and designed an 
                 algorithm that recommend garden layout 
                 based on user preferences.`,
-  skills: ["React", "JavaScript", "IBM Db2"],
+  skills: [Skill.REACT, Skill.JAVASCRIPT, Skill.IBM_DB2],
   github: "https://github.com/PhillipDaum/iplantit",
   youtube: "https://www.youtube.com/watch?v=rrDzHoShVhY",
   image: iplantitImg,
@@ -81,7 +82,13 @@ const hygeia = new ProjectObj({
               I created the elderly-facing side of the project,
               including voice assistant, creating appointment, and 
               collecting data and sending to the doctor-side. `,
-  skills: ["Flutter", "Firebase", "DialogFlow", "Android Studio", "Git"],
+  skills: [
+    Skill.FLUTTER,
+    Skill.FIREBASE,
+    Skill.DIALOGFLOW,
+    Skill.ANDROID_STUDIO,
+    Skill.GIT,
+  ],
   github: "https://github.com/Andrew920528/Hygeia_GSC",
   youtube: "https://www.youtube.com/watch?v=9J8sIl3Lmkk",
   image: hygeiaImg,
@@ -97,11 +104,11 @@ const Project = () => {
         <h3>
           A collection of passion projects where curiosity meets creativity.
         </h3>
-        <RectButton
+        {/* <RectButton
           text={"View Project Archive"}
           onClick={() => {}}
           align={"center"}
-        />
+        /> */}
       </div>
       <div className="project-cards">
         {projects.map((p) => (

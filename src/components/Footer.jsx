@@ -4,6 +4,11 @@ import SimCardDownloadOutlinedIcon from "@mui/icons-material/SimCardDownloadOutl
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import {RESUME_LINK} from "../global/constants";
+
+function viewResume() {
+  window.open(RESUME_LINK, "_blank");
+}
 const Footer = ({darkMode}) => {
   return (
     <div className="footer">
@@ -24,9 +29,9 @@ const Footer = ({darkMode}) => {
       />
       <FooterIconWithLink
         icon={<SimCardDownloadOutlinedIcon fontSize="inherit" />}
-        text={"Download Resume"}
+        text={"View Resume"}
         onClick={() => {
-          console.log("Download Resume");
+          viewResume();
         }}
       />
       <div className="socialIcons">
