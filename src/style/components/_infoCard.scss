@@ -34,6 +34,17 @@
       }
     }
   }
+  .special-banner {
+    // padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(
+      to right,
+      map-get($map: $theme, $key: "tertiary-v"),
+      map-get($map: $theme, $key: "tertiary")
+    );
+  }
   .image-wrapper {
     display: flex;
     flex-direction: column;
@@ -42,6 +53,9 @@
     border-radius: 5px 5px 0 0;
 
     position: relative;
+    &.with-special-banner {
+      border-radius: 0 0 0 0;
+    }
 
     img {
       border-radius: 5px 5px 0 0;

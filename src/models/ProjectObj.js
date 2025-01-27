@@ -8,6 +8,8 @@ export function ProjectObj({
   youtube,
   image,
   pivot,
+  learnMoreLink,
+  specialBanner,
 }) {
   this.projectName = projectName;
   this.event = event;
@@ -18,4 +20,6 @@ export function ProjectObj({
   this.youtube = youtube;
   this.image = image;
   this.pivot = pivot;
+  this.learnMoreLink = learnMoreLink;
+  this.specialBanner = specialBanner;
 }

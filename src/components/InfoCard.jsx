@@ -16,6 +16,8 @@ const InfoCard = ({
   youtube,
   github,
   pivot,
+  learnMoreLink,
+  specialBanner,
 }) => {
   const LinkWithIcon = ({icon, text, url}) => {
     const theme = useTheme();
@@ -28,10 +30,19 @@ const InfoCard = ({
       </div>
     );
   };
+  const learnMore = () => {
+    if (!learnMoreLink) return;
+    window.open(learnMoreLink, "_blank"); // Opens in a new tab
+  };
   return (
     <div className="info-card">
       <Frame>
-        <div className="image-wrapper">
+        {specialBanner && <div className="special-banner">{specialBanner}</div>}
+        <div
+          className={`image-wrapper ${
+            specialBanner ? "with-special-banner" : ""
+          }`}
+        >
           <img
             src={image}
             alt="info-card"
@@ -49,7 +60,11 @@ const InfoCard = ({
           <div className="div-line" />
           <div className="info-block-description">
             <p>{description}</p>
-            <p className="learn-more">Learn More</p>
+            {learnMoreLink && (
+              <p className="learn-more" onClick={learnMore}>
+                Learn More
+              </p>
+            )}
           </div>
           <div className="div-line" />
           <div className="chips">

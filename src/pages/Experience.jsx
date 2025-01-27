@@ -8,6 +8,20 @@ import {format} from "date-fns";
 import coc_logo from "../images/coc.png";
 import gpc_logo from "../images/gpc.png";
 import nex_logo from "../images/nexuni.png";
+import ddsc_logo from "../images/ddsc.png";
+
+const dsmc = new ExperienceObj({
+  company: "Dimerco Data System Corp",
+  start: new Date(2024, 6),
+  end: new Date(2024, 7),
+  role: "Software Engineer",
+  description: `I worked on projects that streamlines the company's operations.
+                Specifically, I used Selenium to create a web scraper for package management and
+                leveraged OpenAi Whisper to convert meeting recordings into text`,
+  skills: ["React", "Selenium", "Python", "AI", "API Development"],
+  site: "https://www.nexuni.com/MainPage",
+  image: ddsc_logo,
+});
 
 const nexuni = new ExperienceObj({
   company: "Nexuni Co. Ltd.",
@@ -62,6 +76,7 @@ const gpc = new ExperienceObj({
 const gtcoc = new ExperienceObj({
   company: "GT College of Computing",
   start: new Date(2022, 0),
+  end: new Date(2024, 5),
   role: "Teaching Assitant",
   description: `Teaches Computer Organization Concepts, Assemble, C, and Python
                 Holds office hours and teaches lab for a total of 6 hours a week.`,
@@ -71,14 +86,14 @@ const gtcoc = new ExperienceObj({
 });
 
 const Experience = () => {
-  const experiences = [nexuni, gpc, gtcoc];
+  const experiences = [dsmc, nexuni, gpc, gtcoc];
   return (
     <div className="experience">
       <Header title={"Experience"} />
       <div className="subtitle-block">
         <h3>
-          They taught me to never stop learning, and to always have a passion
-          for what I do.
+          These experiences are the building blocks of my engineering journey,
+          each shaping my skills and perspective.
         </h3>
         <RectButton text={"View Resume"} onClick={() => {}} align={"center"} />
       </div>

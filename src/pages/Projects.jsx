@@ -6,6 +6,29 @@ import {ProjectObj} from "../models/ProjectObj";
 import iplantitImg from "../images/iplantit.png";
 import hygeiaImg from "../images/hygeia.png";
 import plantomoImg from "../images/plantomo_img.png";
+import ritaImg from "../images/rita.png";
+const rita = new ProjectObj({
+  projectName: "Rita",
+  event: "IBM Call for Code 2024",
+  role: "Project Lead",
+  description: `The award winning application that transforms how teachers prepare for their classes.`,
+  skills: [
+    "React",
+    "Typescript",
+    "AI",
+    "Langchain",
+    "Python",
+    "AWS",
+    "API Development",
+  ],
+  github: "https://github.com/Andrew920528/rita-cfc-2024",
+  youtube: "https://www.youtube.com/watch?v=spGOiM32nGE",
+  image: ritaImg,
+  pivot: "0% 100%",
+  learnMoreLink:
+    "https://developer.ibm.com/callforcode/solutions/2024-solutions/",
+  specialBanner: "Grand Prize Winner!",
+});
 
 const plantomo = new ProjectObj({
   projectName: "Plantomo",
@@ -66,12 +89,14 @@ const hygeia = new ProjectObj({
 });
 
 const Project = () => {
-  const projects = [plantomo, iplantit, hygeia];
+  const projects = [rita, plantomo, iplantit, hygeia];
   return (
     <div className="project">
       <Header title={"Project"} />
       <div className="subtitle-block">
-        <h3>Some call them crazy ideas. I call them projects.</h3>
+        <h3>
+          A collection of passion projects where curiosity meets creativity.
+        </h3>
         <RectButton
           text={"View Project Archive"}
           onClick={() => {}}
@@ -91,6 +116,8 @@ const Project = () => {
             github={p.github}
             pivot={p.pivot}
             key={p.projectName}
+            learnMoreLink={p.learnMoreLink}
+            specialBanner={p.specialBanner}
           />
         ))}
       </div>
