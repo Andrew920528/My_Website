@@ -1,5 +1,5 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import SpeakerNotesRoundedIcon from "@mui/icons-material/SpeakerNotesRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
@@ -27,11 +27,11 @@ const MobileNav = () => {
   const theme = useTheme();
   const gradient = "url('#linearColors')";
   const icons = [
-    <HomeRoundedIcon sx={navValue == 0 ? {fill: gradient} : {}} />,
-    <SpeakerNotesRoundedIcon sx={navValue == 1 ? {fill: gradient} : {}} />,
-    <DocumentScannerRoundedIcon sx={navValue == 2 ? {fill: gradient} : {}} />,
-    <FolderCopyRoundedIcon sx={navValue == 3 ? {fill: gradient} : {}} />,
-    <SendRoundedIcon sx={navValue == 4 ? {fill: gradient} : {}} />,
+    <HomeRoundedIcon sx={navValue === 0 ? {fill: gradient} : {}} />,
+    <SpeakerNotesRoundedIcon sx={navValue === 1 ? {fill: gradient} : {}} />,
+    <DocumentScannerRoundedIcon sx={navValue === 2 ? {fill: gradient} : {}} />,
+    <FolderCopyRoundedIcon sx={navValue === 3 ? {fill: gradient} : {}} />,
+    <SendRoundedIcon sx={navValue === 4 ? {fill: gradient} : {}} />,
   ];
 
   return (
@@ -42,7 +42,7 @@ const MobileNav = () => {
         onClick={() => {
           setNavValue(0);
         }}
-        selected={navValue == 0}
+        selected={navValue === 0}
       />
       <SectionLabel
         icon={icons[1]}
@@ -50,7 +50,7 @@ const MobileNav = () => {
         onClick={() => {
           setNavValue(1);
         }}
-        selected={navValue == 1}
+        selected={navValue === 1}
       />
       <SectionLabel
         icon={icons[2]}
@@ -58,7 +58,7 @@ const MobileNav = () => {
         onClick={() => {
           setNavValue(2);
         }}
-        selected={navValue == 2}
+        selected={navValue === 2}
       />
       <SectionLabel
         icon={icons[3]}
@@ -66,7 +66,7 @@ const MobileNav = () => {
         onClick={() => {
           setNavValue(3);
         }}
-        selected={navValue == 3}
+        selected={navValue === 3}
       />
       <SectionLabel
         icon={icons[4]}
@@ -74,7 +74,7 @@ const MobileNav = () => {
         onClick={() => {
           setNavValue(4);
         }}
-        selected={navValue == 4}
+        selected={navValue === 4}
       />
     </div>
   );

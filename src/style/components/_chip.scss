@@ -19,3 +19,20 @@
   padding: 2px;
   display: inline-block;
 }
+
+.chip-border-wrap.big {
+  background: linear-gradient(
+    to bottom,
+    map-get($map: $theme, $key: "primary"),
+    map-get($map: $theme, $key: "secondary")
+  );
+  border-radius: 50px;
+  padding: 3px;
+  display: inline-block;
+  .chip {
+    p {
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+}

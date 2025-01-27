@@ -1,4 +1,4 @@
-import {useState, useMemo} from "react";
+import {useState, useMemo, useEffect, useRef} from "react";
 import "./style/main.scss";
 import {ThemeProvider} from "@mui/material/styles";
 import {createTheme} from "@mui/material/styles";
@@ -32,6 +32,37 @@ function App() {
     });
   }, [darkMode]);
 
+  const [isNavVisible, setIsNavVisible] = useState(false);
+  const scrollContainerRef = useRef(null); // Reference for the scrollable element
+  const lastScrollY = useRef(0); // Reference for last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollContainerRef.current) return;
+
+      const currentScrollY = scrollContainerRef.current.scrollTop; // Get scroll position of the element
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        setIsNavVisible(false); // Hide nav on scroll down
+      } else {
+        setIsNavVisible(true); // Show nav on scroll up
+      }
+
+      lastScrollY.current = currentScrollY; // Update last scroll position
+    };
+
+    const scrollableElement = scrollContainerRef.current;
+    if (scrollableElement) {
+      scrollableElement.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (scrollableElement) {
+        scrollableElement.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -40,8 +71,10 @@ function App() {
           color: "text.primary",
         }}
       >
-        <div className="app">
-          <MobileTop darkMode={darkMode} toggleMode={toggleMode}></MobileTop>
+        <div className="app" ref={scrollContainerRef}>
+          <div className={`mobile-top-wrap ${isNavVisible ? "" : "hidden"}`}>
+            <MobileTop darkMode={darkMode} toggleMode={toggleMode}></MobileTop>
+          </div>
           <div className="content">
             <Home></Home>
             <About></About>
@@ -50,7 +83,9 @@ function App() {
             <Contact></Contact>
             <Footer darkMode={darkMode}></Footer>
           </div>
-          <MobileNav />
+          <div className={`mobile-nav-wrap ${isNavVisible ? "" : "hidden"}`}>
+            <MobileNav />
+          </div>
         </div>
       </Box>
     </ThemeProvider>

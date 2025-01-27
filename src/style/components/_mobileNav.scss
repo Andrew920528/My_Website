@@ -31,4 +31,8 @@
   &.light {
     background-color: rgba($color: #fff, $alpha: 0.7);
   }
+
+  .hide {
+    display: none;
+  }
 }

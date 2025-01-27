@@ -1,8 +1,8 @@
 import React from "react";
 import {Box} from "@mui/material";
-const Chip = ({text}) => {
+const Chip = ({text, mode}) => {
   return (
-    <div className="chip-border-wrap">
+    <div className={`chip-border-wrap ${mode}`}>
       <Box
         sx={{
           bgcolor: "background.default",
