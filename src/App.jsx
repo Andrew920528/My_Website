@@ -1,4 +1,4 @@
-import {useState, useMemo, useEffect, useRef} from "react";
+import React, {useState, useMemo, useEffect, useRef} from "react";
 import "./style/main.scss";
 import {ThemeProvider} from "@mui/material/styles";
 import {createTheme} from "@mui/material/styles";
@@ -36,13 +36,15 @@ function App() {
   const scrollContainerRef = useRef(null); // Reference for the scrollable element
   const lastScrollY = useRef(0); // Reference for last scroll position
 
+  const sectionRefs = useRef(Array.from({length: 5}, () => React.createRef()));
+  const [activeSection, setActiveSection] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
 
       const currentScrollY = scrollContainerRef.current.scrollTop; // Get scroll position of the element
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
         setIsNavVisible(false); // Hide nav on scroll down
       } else {
         setIsNavVisible(true); // Show nav on scroll up
@@ -51,14 +53,34 @@ function App() {
       lastScrollY.current = currentScrollY; // Update last scroll position
     };
 
+    const handleSectionScroll = () => {
+      sectionRefs.current.forEach((ref, index) => {
+        if (ref) {
+          ref = ref.current;
+          const rect = ref.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+
+          // Check if the section is above threshold
+          if (
+            rect.top <= viewportHeight * 0.6 &&
+            rect.bottom >= viewportHeight * 0.6
+          ) {
+            setActiveSection(index);
+          }
+        }
+      });
+    };
+
     const scrollableElement = scrollContainerRef.current;
     if (scrollableElement) {
       scrollableElement.addEventListener("scroll", handleScroll);
+      scrollableElement.addEventListener("scroll", handleSectionScroll);
     }
 
     return () => {
       if (scrollableElement) {
         scrollableElement.removeEventListener("scroll", handleScroll);
+        scrollableElement.removeEventListener("scroll", handleSectionScroll);
       }
     };
   }, []);
@@ -72,19 +94,28 @@ function App() {
         }}
       >
         <div className="app" ref={scrollContainerRef}>
-          <div className={`mobile-top-wrap ${isNavVisible ? "" : "hidden"}`}>
+          {/* <div className={`mobile-top-wrap ${isNavVisible ? "" : "hidden"}`}>
             <MobileTop darkMode={darkMode} toggleMode={toggleMode}></MobileTop>
-          </div>
+          </div> */}
           <div className="content">
-            <Home></Home>
-            <About></About>
-            <Experience></Experience>
-            <Projects></Projects>
-            <Contact></Contact>
+            <Home
+              startSectionRef={sectionRefs.current[1]}
+              ref={sectionRefs.current[0]}
+            ></Home>
+            <About ref={sectionRefs.current[1]}></About>
+            <Experience ref={sectionRefs.current[2]}></Experience>
+            <Projects ref={sectionRefs.current[3]}></Projects>
+            <Contact ref={sectionRefs.current[4]}></Contact>
             <Footer darkMode={darkMode}></Footer>
           </div>
-          <div className={`mobile-nav-wrap ${isNavVisible ? "" : "hidden"}`}>
-            <MobileNav />
+          <div
+            className={`mobile-nav-wrap ${activeSection !== 0 ? "" : "hidden"}`}
+          >
+            <MobileNav
+              refs={sectionRefs.current}
+              activeSection={activeSection}
+              setActiveSection={setActiveSection}
+            />
           </div>
         </div>
       </Box>

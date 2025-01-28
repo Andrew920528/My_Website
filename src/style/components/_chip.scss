@@ -18,6 +18,9 @@
   border-radius: 50px;
   padding: 2px;
   display: inline-block;
+  &.clickable {
+    cursor: pointer;
+  }
 }
 
 .chip-border-wrap.big {

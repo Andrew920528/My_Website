@@ -1,7 +1,6 @@
 import React from "react";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 import IconButton from "@mui/material/IconButton";
-import TranslateIcon from "@mui/icons-material/Translate";
 
 const MobileTop = ({darkMode, toggleMode, language, theme}) => {
   return (
@@ -13,11 +12,8 @@ const MobileTop = ({darkMode, toggleMode, language, theme}) => {
     >
       <h3 className="name">Andrew Hsu</h3>
       <div className="icons">
-        <IconButton onClick={() => {}} color="inherit">
-          <TranslateIcon />
-        </IconButton>
         <IconButton onClick={toggleMode} color="inherit">
-          <Brightness7Icon />
+          <Brightness4Icon />
         </IconButton>
       </div>
     </div>

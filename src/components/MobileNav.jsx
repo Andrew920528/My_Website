@@ -22,60 +22,53 @@ const SectionLabel = ({icon, text, onClick, selected}) => {
   );
 };
 
-const MobileNav = () => {
-  const [navValue, setNavValue] = useState(0);
+function SectionObj({id, icon, text, ref}) {
+  this.id = id;
+  this.icon = icon;
+  this.text = text;
+  this.ref = ref;
+}
+
+const MobileNav = ({refs, activeSection, setActiveSection}) => {
   const theme = useTheme();
   const gradient = "url('#linearColors')";
   const icons = [
-    <HomeRoundedIcon sx={navValue === 0 ? {fill: gradient} : {}} />,
-    <SpeakerNotesRoundedIcon sx={navValue === 1 ? {fill: gradient} : {}} />,
-    <DocumentScannerRoundedIcon sx={navValue === 2 ? {fill: gradient} : {}} />,
-    <FolderCopyRoundedIcon sx={navValue === 3 ? {fill: gradient} : {}} />,
-    <SendRoundedIcon sx={navValue === 4 ? {fill: gradient} : {}} />,
+    <HomeRoundedIcon sx={activeSection === 0 ? {fill: gradient} : {}} />,
+    <SpeakerNotesRoundedIcon
+      sx={activeSection === 1 ? {fill: gradient} : {}}
+    />,
+    <DocumentScannerRoundedIcon
+      sx={activeSection === 2 ? {fill: gradient} : {}}
+    />,
+    <FolderCopyRoundedIcon sx={activeSection === 3 ? {fill: gradient} : {}} />,
+    <SendRoundedIcon sx={activeSection === 4 ? {fill: gradient} : {}} />,
+  ];
+  const sections = [
+    new SectionObj({id: 0, icon: icons[0], text: "Home"}),
+    new SectionObj({id: 1, icon: icons[1], text: "About"}),
+    new SectionObj({id: 2, icon: icons[2], text: "Experience"}),
+    new SectionObj({id: 3, icon: icons[3], text: "Projects"}),
+    new SectionObj({id: 4, icon: icons[4], text: "Contact"}),
   ];
 
   return (
     <div className={`mobile-nav ${theme.mode}`}>
-      <SectionLabel
-        icon={icons[0]}
-        text={"Home"}
-        onClick={() => {
-          setNavValue(0);
-        }}
-        selected={navValue === 0}
-      />
-      <SectionLabel
-        icon={icons[1]}
-        text={"About"}
-        onClick={() => {
-          setNavValue(1);
-        }}
-        selected={navValue === 1}
-      />
-      <SectionLabel
-        icon={icons[2]}
-        text={"Experience"}
-        onClick={() => {
-          setNavValue(2);
-        }}
-        selected={navValue === 2}
-      />
-      <SectionLabel
-        icon={icons[3]}
-        text={"Projects"}
-        onClick={() => {
-          setNavValue(3);
-        }}
-        selected={navValue === 3}
-      />
-      <SectionLabel
-        icon={icons[4]}
-        text={"Contact"}
-        onClick={() => {
-          setNavValue(4);
-        }}
-        selected={navValue === 4}
-      />
+      {sections.map((section) => {
+        return (
+          <SectionLabel
+            key={section.id}
+            icon={section.icon}
+            text={section.text}
+            onClick={() => {
+              refs[section.id].current.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+              });
+            }}
+            selected={activeSection === section.id}
+          />
+        );
+      })}
     </div>
   );
 };

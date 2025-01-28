@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import Header from "../components/Header";
 import RectButton from "../components/RectButton";
 import InfoCard from "../components/InfoCard";
@@ -93,13 +93,13 @@ const gtcoc = new ExperienceObj({
   image: coc_logo,
 });
 
-const Experience = () => {
+const Experience = forwardRef((_, ref) => {
   const experiences = [dsmc, nexuni, gpc, gtcoc];
   function viewResume() {
     window.open(RESUME_LINK, "_blank");
   }
   return (
-    <div className="experience">
+    <div className="experience" ref={ref}>
       <Header title={"Experience"} />
       <div className="subtitle-block">
         <h3>
@@ -134,6 +134,6 @@ const Experience = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Experience;

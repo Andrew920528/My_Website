@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {forwardRef, useState} from "react";
 import Chip from "../components/Chip";
 import Frame from "../components/Frame";
 import Header from "../components/Header";
@@ -6,7 +6,7 @@ import gtLogo from "../images/gt_logo.png";
 import Collapse from "@mui/material/Collapse";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import {Skill} from "../global/constants";
-const About = () => {
+const About = forwardRef((_, ref) => {
   const GoalsContent = () => (
     <div className="goals">
       <p>
@@ -85,7 +85,7 @@ const About = () => {
   };
 
   return (
-    <div className="about">
+    <div className="about" ref={ref}>
       <Header title={"About Me"}></Header>
       <Frame>
         <AboutSectionBlock title={"Goals"}>
@@ -104,7 +104,7 @@ const About = () => {
       </Frame>
     </div>
   );
-};
+});
 
 const AboutSectionBlock = ({title, children}) => {
   return (

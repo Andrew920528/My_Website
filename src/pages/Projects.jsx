@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import Header from "../components/Header";
 import RectButton from "../components/RectButton";
 import InfoCard from "../components/InfoCard";
@@ -25,7 +25,7 @@ const rita = new ProjectObj({
   github: "https://github.com/Andrew920528/rita-cfc-2024",
   youtube: "https://www.youtube.com/watch?v=spGOiM32nGE",
   image: ritaImg,
-  pivot: "0% 100%",
+  pivot: "50% 50%",
   learnMoreLink:
     "https://developer.ibm.com/callforcode/solutions/2024-solutions/",
   specialBanner: "Grand Prize Winner!",
@@ -95,10 +95,10 @@ const hygeia = new ProjectObj({
   pivot: "0% 70%",
 });
 
-const Project = () => {
+const Project = forwardRef((_, ref) => {
   const projects = [rita, plantomo, iplantit, hygeia];
   return (
-    <div className="project">
+    <div className="project" ref={ref}>
       <Header title={"Project"} />
       <div className="subtitle-block">
         <h3>
@@ -130,6 +130,6 @@ const Project = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Project;
