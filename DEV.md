@@ -20,6 +20,19 @@ src
 └── utils       # Contains any useful functions
 ```
 
+## Setup:
+
+```
+git config --global http.postBuffer 157286400
+npm run deploy
+```
+
+if it says "gh-pages" already exist
+
+```
+rm -rf node_modules/.cache/gh-pages
+```
+
 ## Quotes/ 雜談
 
 Thoughts that lead to greatness, goes here

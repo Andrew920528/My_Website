@@ -32,7 +32,7 @@ function App() {
     });
   }, [darkMode]);
 
-  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isTopVisible, setIsTopVisible] = useState(true);
   const scrollContainerRef = useRef(null); // Reference for the scrollable element
   const lastScrollY = useRef(0); // Reference for last scroll position
 
@@ -45,9 +45,9 @@ function App() {
       const currentScrollY = scrollContainerRef.current.scrollTop; // Get scroll position of the element
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
-        setIsNavVisible(false); // Hide nav on scroll down
+        setIsTopVisible(false); // Hide nav on scroll down
       } else {
-        setIsNavVisible(true); // Show nav on scroll up
+        setIsTopVisible(true); // Show nav on scroll up
       }
 
       lastScrollY.current = currentScrollY; // Update last scroll position
@@ -91,12 +91,13 @@ function App() {
         sx={{
           bgcolor: "background.default",
           color: "text.primary",
+          transition: "background-color 0.2s ease",
         }}
       >
         <div className="app" ref={scrollContainerRef}>
-          {/* <div className={`mobile-top-wrap ${isNavVisible ? "" : "hidden"}`}>
+          <div className={`mobile-top-wrap ${isTopVisible ? "" : "hidden"}`}>
             <MobileTop darkMode={darkMode} toggleMode={toggleMode}></MobileTop>
-          </div> */}
+          </div>
           <div className="content">
             <Home
               startSectionRef={sectionRefs.current[1]}
