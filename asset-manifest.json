@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/My_Website/static/css/main.2e11b9c3.css",
-    "main.js": "/My_Website/static/js/main.bdb19086.js",
+    "main.css": "/My_Website/static/css/main.cc1b0e12.css",
+    "main.js": "/My_Website/static/js/main.0cd10653.js",
     "static/js/453.0437a03d.chunk.js": "/My_Website/static/js/453.0437a03d.chunk.js",
     "static/media/placeholder.jpg": "/My_Website/static/media/placeholder.c68b0dc0e4b7c17eabf5.jpg",
     "static/media/iplantit.png": "/My_Website/static/media/iplantit.b3f02c2fc77e6af0e760.png",
@@ -15,12 +15,12 @@
     "static/media/ddsc.png": "/My_Website/static/media/ddsc.421377ed641bedace1be.png",
     "static/media/nexuni.png": "/My_Website/static/media/nexuni.80a9efd5430bde2f0510.png",
     "index.html": "/My_Website/index.html",
-    "main.2e11b9c3.css.map": "/My_Website/static/css/main.2e11b9c3.css.map",
-    "main.bdb19086.js.map": "/My_Website/static/js/main.bdb19086.js.map",
+    "main.cc1b0e12.css.map": "/My_Website/static/css/main.cc1b0e12.css.map",
+    "main.0cd10653.js.map": "/My_Website/static/js/main.0cd10653.js.map",
     "453.0437a03d.chunk.js.map": "/My_Website/static/js/453.0437a03d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e11b9c3.css",
-    "static/js/main.bdb19086.js"
+    "static/css/main.cc1b0e12.css",
+    "static/js/main.0cd10653.js"
   ]
 }
