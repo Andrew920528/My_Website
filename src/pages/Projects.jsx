@@ -15,7 +15,7 @@ const rita = new ProjectObj({
   description: `The award winning application that transforms how teachers prepare for their classes.`,
   skills: [
     Skill.REACT,
-    Skill.TypeScript,
+    Skill.TYPESCRIPT,
     Skill.AI,
     Skill.LANGCHAIN,
     Skill.PYTHON,

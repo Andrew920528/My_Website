@@ -2,7 +2,6 @@
 .section-label {
   display: flex;
   flex-direction: column;
-  //gap: 0.5rem;
   align-items: center;
   div {
     display: flex;
@@ -15,6 +14,12 @@
     &.selected {
       color: map-get($map: $theme, $key: "secondary-v");
     }
+  }
+
+  @include with-min-width("medium") {
+    flex-direction: row;
+    gap: 0.5rem;
+    cursor: pointer;
   }
 }
 
@@ -33,6 +38,10 @@
   }
 
   .hide {
+    display: none;
+  }
+
+  @include with-min-width("medium") {
     display: none;
   }
 }

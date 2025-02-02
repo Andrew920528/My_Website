@@ -1,37 +1,13 @@
 import React from "react";
-import {useState, useEffect} from "react";
 import SpeakerNotesRoundedIcon from "@mui/icons-material/SpeakerNotesRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
 import FolderCopyRoundedIcon from "@mui/icons-material/FolderCopyRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
-import variables from "../style/abstract/_variable.scss";
-import {useTheme} from "@emotion/react";
-const SectionLabel = ({icon, text, onClick, selected}) => {
-  return (
-    <div className="section-label" onClick={onClick}>
-      <svg width={0} height={0}>
-        <linearGradient id="linearColors" x1={1} y1={0} x2={1} y2={1}>
-          <stop offset={0} stopColor={variables.primary_v} />
-          <stop offset={1} stopColor={variables.secondary_v} />
-        </linearGradient>
-      </svg>
-      <div>{icon}</div>
-      <p className={selected ? "selected" : ""}>{text}</p>
-    </div>
-  );
-};
-
-function SectionObj({id, icon, text, ref}) {
-  this.id = id;
-  this.icon = icon;
-  this.text = text;
-  this.ref = ref;
-}
-
-const MobileNav = ({refs, activeSection, setActiveSection}) => {
-  const theme = useTheme();
-  const gradient = "url('#linearColors')";
+import variables from "../../style/abstract/_variable.scss";
+import {SectionLabel, SectionObj} from "./SectionLabel";
+const PCNav = ({refs, activeSection, setActiveSection}) => {
+  const gradient = "url('#linearColors-pc')";
   const icons = [
     <HomeRoundedIcon sx={activeSection === 0 ? {fill: gradient} : {}} />,
     <SpeakerNotesRoundedIcon
@@ -50,9 +26,14 @@ const MobileNav = ({refs, activeSection, setActiveSection}) => {
     new SectionObj({id: 3, icon: icons[3], text: "Projects"}),
     new SectionObj({id: 4, icon: icons[4], text: "Contact"}),
   ];
-
   return (
-    <div className={`mobile-nav ${theme.mode}`}>
+    <div className="pc-nav">
+      <svg width={0} height={0}>
+        <linearGradient id="linearColors-pc" x1={0} y1={0} x2={1} y2={1}>
+          <stop offset={0} stopColor={variables.primary_v} />
+          <stop offset={1} stopColor={variables.secondary_v} />
+        </linearGradient>
+      </svg>
       {sections.map((section) => {
         return (
           <SectionLabel
@@ -64,6 +45,7 @@ const MobileNav = ({refs, activeSection, setActiveSection}) => {
                 block: "start",
                 behavior: "smooth",
               });
+              setActiveSection(section.id);
             }}
             selected={activeSection === section.id}
           />
@@ -73,4 +55,4 @@ const MobileNav = ({refs, activeSection, setActiveSection}) => {
   );
 };
 
-export default MobileNav;
+export default PCNav;

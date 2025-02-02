@@ -32,6 +32,7 @@ export const Skill = Object.freeze({
   IMAGE_CLASSIFICATION: "Image Classification",
   IBM_DB2: "IBM Db2",
   FLUTTER: "Flutter",
+  TYPESCRIPT: "TypeScript",
 });
 
 export const RESUME_LINK =

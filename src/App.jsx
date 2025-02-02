@@ -11,7 +11,8 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import MobileTop from "./components/MobileTop";
 import Footer from "./components/Footer";
-import MobileNav from "./components/MobileNav";
+import MobileNav from "./components/nav/MobileNav";
+import PCNav from "./components/nav/PCNav";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -98,25 +99,34 @@ function App() {
           <div className={`mobile-top-wrap ${isTopVisible ? "" : "hidden"}`}>
             <MobileTop darkMode={darkMode} toggleMode={toggleMode}></MobileTop>
           </div>
-          <div className="content">
-            <Home
-              startSectionRef={sectionRefs.current[1]}
-              ref={sectionRefs.current[0]}
-            ></Home>
-            <About ref={sectionRefs.current[1]}></About>
-            <Experience ref={sectionRefs.current[2]}></Experience>
-            <Projects ref={sectionRefs.current[3]}></Projects>
-            <Contact ref={sectionRefs.current[4]}></Contact>
-            <Footer darkMode={darkMode}></Footer>
-          </div>
-          <div
-            className={`mobile-nav-wrap ${activeSection !== 0 ? "" : "hidden"}`}
-          >
-            <MobileNav
-              refs={sectionRefs.current}
-              activeSection={activeSection}
-              setActiveSection={setActiveSection}
-            />
+          <Home
+            startSectionRef={sectionRefs.current[1]}
+            ref={sectionRefs.current[0]}
+          ></Home>
+          <div className="content-and-nav">
+            <div className="content">
+              <About ref={sectionRefs.current[1]}></About>
+              <Experience ref={sectionRefs.current[2]}></Experience>
+              <Projects ref={sectionRefs.current[3]}></Projects>
+              <Contact ref={sectionRefs.current[4]}></Contact>
+              <Footer darkMode={darkMode}></Footer>
+            </div>
+            <div
+              className={`mobile-nav-wrap ${
+                activeSection !== 0 ? "" : "hidden"
+              }`}
+            >
+              <MobileNav
+                refs={sectionRefs.current}
+                activeSection={activeSection}
+                setActiveSection={setActiveSection}
+              />
+              <PCNav
+                refs={sectionRefs.current}
+                activeSection={activeSection}
+                setActiveSection={setActiveSection}
+              />
+            </div>
           </div>
         </div>
       </Box>
