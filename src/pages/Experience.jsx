@@ -93,13 +93,13 @@ const gtcoc = new ExperienceObj({
   image: coc_logo,
 });
 
-const Experience = forwardRef((_, ref) => {
+const Experience = forwardRef(({hide}, ref) => {
   const experiences = [dsmc, nexuni, gpc, gtcoc];
   function viewResume() {
     window.open(RESUME_LINK, "_blank");
   }
   return (
-    <div className="experience" ref={ref}>
+    <div className={`experience ${hide ? "--pc-display-none" : ""}`} ref={ref}>
       <Header title={"Experience"} />
       <div className="subtitle-block">
         <h3>

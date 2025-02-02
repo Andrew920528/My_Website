@@ -95,10 +95,10 @@ const hygeia = new ProjectObj({
   pivot: "0% 70%",
 });
 
-const Project = forwardRef((_, ref) => {
+const Project = forwardRef(({hide}, ref) => {
   const projects = [rita, plantomo, iplantit, hygeia];
   return (
-    <div className="project" ref={ref}>
+    <div className={`project ${hide ? "--pc-display-none" : ""}`} ref={ref}>
       <Header title={"Project"} />
       <div className="subtitle-block">
         <h3>

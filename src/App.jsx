@@ -105,11 +105,23 @@ function App() {
           ></Home>
           <div className="content-and-nav">
             <div className="content">
-              <About ref={sectionRefs.current[1]}></About>
-              <Experience ref={sectionRefs.current[2]}></Experience>
-              <Projects ref={sectionRefs.current[3]}></Projects>
-              <Contact ref={sectionRefs.current[4]}></Contact>
-              <Footer darkMode={darkMode}></Footer>
+              <About
+                hide={activeSection !== 1 && activeSection !== 0}
+                ref={sectionRefs.current[1]}
+              ></About>
+              <Experience
+                hide={activeSection !== 2}
+                ref={sectionRefs.current[2]}
+              ></Experience>
+              <Projects
+                hide={activeSection !== 3}
+                ref={sectionRefs.current[3]}
+              ></Projects>
+              <Contact
+                hide={activeSection !== 4}
+                ref={sectionRefs.current[4]}
+              ></Contact>
+              <Footer darkMode={darkMode} displayForMobile={true} />
             </div>
             <div
               className={`mobile-nav-wrap ${
@@ -121,11 +133,16 @@ function App() {
                 activeSection={activeSection}
                 setActiveSection={setActiveSection}
               />
-              <PCNav
-                refs={sectionRefs.current}
-                activeSection={activeSection}
-                setActiveSection={setActiveSection}
-              />
+              <div className="pc-side">
+                <div className="pc-nav-wrapper">
+                  <PCNav
+                    refs={sectionRefs.current}
+                    activeSection={activeSection}
+                    setActiveSection={setActiveSection}
+                  />
+                </div>
+                <Footer darkMode={darkMode} displayForPC={true} />
+              </div>
             </div>
           </div>
         </div>

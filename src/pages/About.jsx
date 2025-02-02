@@ -6,7 +6,7 @@ import gtLogo from "../images/gt_logo.png";
 import Collapse from "@mui/material/Collapse";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import {Skill} from "../global/constants";
-const About = forwardRef((_, ref) => {
+const About = forwardRef(({hide}, ref) => {
   const GoalsContent = () => (
     <div className="goals">
       <p>
@@ -85,7 +85,7 @@ const About = forwardRef((_, ref) => {
   };
 
   return (
-    <div className="about" ref={ref}>
+    <div className={`about ${hide ? "--pc-display-none" : ""}`} ref={ref}>
       <Header title={"About Me"}></Header>
       <Frame>
         <AboutSectionBlock title={"Goals"}>

@@ -9,9 +9,13 @@ import {RESUME_LINK} from "../global/constants";
 function viewResume() {
   window.open(RESUME_LINK, "_blank");
 }
-const Footer = ({darkMode}) => {
+const Footer = ({darkMode, displayForMobile, displayForPC}) => {
   return (
-    <div className="footer">
+    <div
+      className={`footer ${displayForMobile && "--pc-display-none"} ${
+        displayForPC && "--mobile-display-none"
+      }`}
+    >
       <div
         className="footer-line"
         style={{

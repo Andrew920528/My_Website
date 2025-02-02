@@ -3,9 +3,9 @@ import Header from "../components/Header";
 import InputBlock from "../components/InputBlock";
 import RectButton from "../components/RectButton";
 
-const Contact = forwardRef((_, ref) => {
+const Contact = forwardRef(({hide}, ref) => {
   return (
-    <div className="contact" ref={ref}>
+    <div className={`contact ${hide ? "--pc-display-none" : ""}`} ref={ref}>
       <Header title={"Contact"} />
       <InputBlock title={"Name"} placeholder={"Enter name"} />
       <InputBlock title={"Email"} placeholder={"Enter email"} />

@@ -24,6 +24,14 @@
     font-size: 0.7rem;
     font-family: $secondary-font-family;
   }
+
+  @include with-min-width("medium") {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .footer-icon-with-link {
