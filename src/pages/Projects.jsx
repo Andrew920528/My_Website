@@ -98,7 +98,10 @@ const hygeia = new ProjectObj({
 const Project = forwardRef(({hide}, ref) => {
   const projects = [rita, plantomo, iplantit, hygeia];
   return (
-    <div className={`project ${hide ? "--pc-display-none" : ""}`} ref={ref}>
+    <div
+      className={`project ${hide ? "--pc-display-none" : "--pc-visible"}`}
+      ref={ref}
+    >
       <Header title={"Project"} />
       <div className="subtitle-block">
         <h3>

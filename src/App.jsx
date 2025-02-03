@@ -13,6 +13,7 @@ import MobileTop from "./components/MobileTop";
 import Footer from "./components/Footer";
 import MobileNav from "./components/nav/MobileNav";
 import PCNav from "./components/nav/PCNav";
+import {set} from "date-fns";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -35,10 +36,12 @@ function App() {
 
   const [isTopVisible, setIsTopVisible] = useState(true);
   const scrollContainerRef = useRef(null); // Reference for the scrollable element
+  const contentRef = useRef(null);
   const lastScrollY = useRef(0); // Reference for last scroll position
 
   const sectionRefs = useRef(Array.from({length: 5}, () => React.createRef()));
   const [activeSection, setActiveSection] = useState(0);
+  const [pcShowPage, setPcShowPage] = useState(1);
   useEffect(() => {
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
@@ -104,21 +107,21 @@ function App() {
             ref={sectionRefs.current[0]}
           ></Home>
           <div className="content-and-nav">
-            <div className="content">
+            <div className="content" ref={contentRef}>
               <About
-                hide={activeSection !== 1 && activeSection !== 0}
+                hide={pcShowPage !== 1}
                 ref={sectionRefs.current[1]}
               ></About>
               <Experience
-                hide={activeSection !== 2}
+                hide={pcShowPage !== 2}
                 ref={sectionRefs.current[2]}
               ></Experience>
               <Projects
-                hide={activeSection !== 3}
+                hide={pcShowPage !== 3}
                 ref={sectionRefs.current[3]}
               ></Projects>
               <Contact
-                hide={activeSection !== 4}
+                hide={pcShowPage !== 4}
                 ref={sectionRefs.current[4]}
               ></Contact>
               <Footer darkMode={darkMode} displayForMobile={true} />
@@ -139,6 +142,8 @@ function App() {
                     refs={sectionRefs.current}
                     activeSection={activeSection}
                     setActiveSection={setActiveSection}
+                    setShowPage={setPcShowPage}
+                    scrollableContainerRef={contentRef}
                   />
                 </div>
                 <Footer darkMode={darkMode} displayForPC={true} />

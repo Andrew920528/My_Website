@@ -99,7 +99,10 @@ const Experience = forwardRef(({hide}, ref) => {
     window.open(RESUME_LINK, "_blank");
   }
   return (
-    <div className={`experience ${hide ? "--pc-display-none" : ""}`} ref={ref}>
+    <div
+      className={`experience ${hide ? "--pc-display-none" : "--pc-visible"}`}
+      ref={ref}
+    >
       <Header title={"Experience"} />
       <div className="subtitle-block">
         <h3>

@@ -12,8 +12,8 @@ function viewResume() {
 const Footer = ({darkMode, displayForMobile, displayForPC}) => {
   return (
     <div
-      className={`footer ${displayForMobile && "--pc-display-none"} ${
-        displayForPC && "--mobile-display-none"
+      className={`footer ${displayForMobile ? "--pc-display-none" : ""} ${
+        displayForPC ? "--mobile-display-none" : ""
       }`}
     >
       <div

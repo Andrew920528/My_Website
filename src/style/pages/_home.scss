@@ -24,19 +24,28 @@
       position: absolute;
       &.hello {
         top: 1rem;
-        left: 1rem;
+        left: 2rem;
         font-size: 4rem;
+        @include with-min-width("medium") {
+          font-size: 6rem;
+        }
       }
       &.im {
         top: 10rem;
         right: 2rem;
         font-size: 4rem;
+        @include with-min-width("medium") {
+          font-size: 6rem;
+        }
       }
       &.andrew {
         bottom: 1rem;
         font-size: 5rem;
         text-align: center;
         line-height: 5rem;
+        @include with-min-width("medium") {
+          font-size: 8rem;
+        }
         &.shadow-light {
           text-shadow: 5px 5px 0px white,
             /* Right-down shadow */ -5px -5px 0px white,

@@ -85,7 +85,10 @@ const About = forwardRef(({hide}, ref) => {
   };
 
   return (
-    <div className={`about ${hide ? "--pc-display-none" : ""}`} ref={ref}>
+    <div
+      className={`about ${hide ? "--pc-display-none" : "--pc-visible"}`}
+      ref={ref}
+    >
       <Header title={"About Me"}></Header>
       <Frame>
         <AboutSectionBlock title={"Goals"}>

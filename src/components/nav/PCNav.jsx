@@ -6,7 +6,13 @@ import FolderCopyRoundedIcon from "@mui/icons-material/FolderCopyRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import variables from "../../style/abstract/_variable.scss";
 import {SectionLabel, SectionObj} from "./SectionLabel";
-const PCNav = ({refs, activeSection, setActiveSection}) => {
+const PCNav = ({
+  refs,
+  activeSection,
+  setActiveSection,
+  setShowPage,
+  scrollableContainerRef,
+}) => {
   const gradient = "url('#linearColors-pc')";
   const icons = [
     <HomeRoundedIcon sx={activeSection === 0 ? {fill: gradient} : {}} />,
@@ -46,6 +52,12 @@ const PCNav = ({refs, activeSection, setActiveSection}) => {
                 behavior: "smooth",
               });
               setActiveSection(section.id);
+              if (section.id !== 0) {
+                setShowPage(section.id);
+                if (scrollableContainerRef.current) {
+                  scrollableContainerRef.current.scrollTop = 0;
+                }
+              }
             }}
             selected={activeSection === section.id}
           />
