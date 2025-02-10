@@ -100,15 +100,15 @@ const About = forwardRef(({hide}, ref) => {
         <div className="about-skill-edu-wrapper">
           <div className="about-section-wrap">
             <Frame>
-              <AboutSectionBlock title={"Skill"}>
-                <SkillContent />
+              <AboutSectionBlock title={"Education"}>
+                <EducationContent />
               </AboutSectionBlock>
             </Frame>
           </div>
           <div className="about-section-wrap">
             <Frame>
-              <AboutSectionBlock title={"Education"}>
-                <EducationContent />
+              <AboutSectionBlock title={"Skill"}>
+                <SkillContent />
               </AboutSectionBlock>
             </Frame>
           </div>

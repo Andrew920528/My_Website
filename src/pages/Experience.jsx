@@ -2,7 +2,6 @@ import React, {forwardRef} from "react";
 import Header from "../components/Header";
 import RectButton from "../components/RectButton";
 import InfoCard from "../components/InfoCard";
-import placeholder from "../images/placeholder.jpg";
 import {ExperienceObj} from "../models/ExperienceObj";
 import {format} from "date-fns";
 import coc_logo from "../images/coc.png";

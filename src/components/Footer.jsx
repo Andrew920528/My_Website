@@ -1,11 +1,11 @@
 import React from "react";
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import SimCardDownloadOutlinedIcon from "@mui/icons-material/SimCardDownloadOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import {RESUME_LINK} from "../global/constants";
 import {EMAIL} from "../global/constants";
+import PhotoFilterIcon from "@mui/icons-material/PhotoFilter";
 function viewResume() {
   window.open(RESUME_LINK, "_blank");
 }
@@ -36,6 +36,17 @@ const Footer = ({darkMode, displayForMobile, displayForPC}) => {
         text={"View Resume"}
         onClick={() => {
           viewResume();
+        }}
+      />
+      <FooterIconWithLink
+        icon={<PhotoFilterIcon fontSize="inherit" />}
+        text={"Use this template"}
+        onClick={() => {
+          window.open(
+            "https://github.com/Andrew920528/My_Website",
+            "_blank",
+            "noopener,noreferrer"
+          );
         }}
       />
       <div className="socialIcons">

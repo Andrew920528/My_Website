@@ -1,6 +1,5 @@
 import React, {forwardRef} from "react";
 import Header from "../components/Header";
-import RectButton from "../components/RectButton";
 import InfoCard from "../components/InfoCard";
 import {ProjectObj} from "../models/ProjectObj";
 import iplantitImg from "../images/iplantit.png";
