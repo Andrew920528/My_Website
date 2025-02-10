@@ -28,8 +28,7 @@ const About = forwardRef(({hide}, ref) => {
       "Data Structures",
       "Computer Graphics",
       "User Centered Design",
-      "Course1",
-      "Course2",
+      "Automata and Complexity",
     ];
     const toggleCourse = () => {
       setCourseExpand((prev) => !prev);
@@ -89,22 +88,32 @@ const About = forwardRef(({hide}, ref) => {
       className={`about ${hide ? "--pc-display-none" : "--pc-visible"}`}
       ref={ref}
     >
-      <Header title={"About Me"}></Header>
-      <Frame>
-        <AboutSectionBlock title={"Goals"}>
-          <GoalsContent />
-        </AboutSectionBlock>
-      </Frame>
-      <Frame>
-        <AboutSectionBlock title={"Education"}>
-          <EducationContent />
-        </AboutSectionBlock>
-      </Frame>
-      <Frame>
-        <AboutSectionBlock title={"Skill"}>
-          <SkillContent />
-        </AboutSectionBlock>
-      </Frame>
+      <Header title={"About Me"} className="about-header"></Header>
+      <div className="about-sections">
+        <div className="about-section-wrap-goal">
+          <Frame>
+            <AboutSectionBlock title={"Goals"}>
+              <GoalsContent />
+            </AboutSectionBlock>
+          </Frame>
+        </div>
+        <div className="about-skill-edu-wrapper">
+          <div className="about-section-wrap">
+            <Frame>
+              <AboutSectionBlock title={"Skill"}>
+                <SkillContent />
+              </AboutSectionBlock>
+            </Frame>
+          </div>
+          <div className="about-section-wrap">
+            <Frame>
+              <AboutSectionBlock title={"Education"}>
+                <EducationContent />
+              </AboutSectionBlock>
+            </Frame>
+          </div>
+        </div>
+      </div>
     </div>
   );
 });

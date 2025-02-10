@@ -30,8 +30,6 @@ export const Skill = Object.freeze({
   MAPBOXSDK: "MapboxSDK",
   AUGMENTED_REALITY: "Augmented Reality",
   IMAGE_CLASSIFICATION: "Image Classification",
-  IBM_DB2: "IBM Db2",
-  FLUTTER: "Flutter",
   TYPESCRIPT: "TypeScript",
 });
 

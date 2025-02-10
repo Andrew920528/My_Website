@@ -1,7 +1,10 @@
+@use "../abstract/index" as *;
 .project {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
+
   .subtitle-block {
     display: flex;
     flex-direction: column;
@@ -12,5 +15,12 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
+    @include with-min-width("medium") {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
   }
 }

@@ -3,6 +3,24 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  .about-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    .about-skill-edu-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      @include with-min-width("large") {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .about-header {
+    width: 100%;
+  }
   .goals {
     font-family: $secondary-font-family;
   }
@@ -50,6 +68,19 @@
     }
   }
 }
+
+.about-section-wrap {
+  width: 100%;
+  @include with-min-width("medium") {
+    min-width: 400px;
+    max-width: 100%;
+  }
+  @include with-min-width("large") {
+    max-width: 50%;
+    min-width: 0;
+  }
+}
+
 .about-section-block {
   display: flex;
   flex-direction: column;
@@ -72,6 +103,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+
   .collapsed {
     mask-image: -webkit-gradient(
       linear,
