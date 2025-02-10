@@ -37,3 +37,5 @@ export const Skill = Object.freeze({
 
 export const RESUME_LINK =
   "https://drive.google.com/file/d/1MBhwr2U7-Yt23jNwkxpvLhPw35goi6Kk/view?usp=sharing";
+
+export const EMAIL = "andrewhsu.0528@gmail.com";

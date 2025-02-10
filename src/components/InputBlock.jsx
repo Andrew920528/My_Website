@@ -1,7 +1,7 @@
 import React from "react";
 import {useTheme} from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
-const InputBlock = ({title, placeholder, multiline}) => {
+const InputBlock = ({title, placeholder, multiline, ...rest}) => {
   const theme = useTheme();
 
   return (
@@ -13,11 +13,13 @@ const InputBlock = ({title, placeholder, multiline}) => {
             <textarea
               className={`input-field ${theme.mode}`}
               placeholder={placeholder}
+              {...rest}
             ></textarea>
           ) : (
             <input
               className={`input-field ${theme.mode}`}
               placeholder={placeholder}
+              {...rest}
             />
           )}
         </div>

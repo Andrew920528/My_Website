@@ -5,7 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import {RESUME_LINK} from "../global/constants";
-
+import {EMAIL} from "../global/constants";
 function viewResume() {
   window.open(RESUME_LINK, "_blank");
 }
@@ -24,13 +24,13 @@ const Footer = ({darkMode, displayForMobile, displayForPC}) => {
             : "rgba(0,0,0,0.2)",
         }}
       />
-      <FooterIconWithLink
+      {/* <FooterIconWithLink
         icon={<Inventory2OutlinedIcon fontSize="inherit" />}
         text={"View Project Archive"}
         onClick={() => {
           console.log("view project archive");
         }}
-      />
+      /> */}
       <FooterIconWithLink
         icon={<SimCardDownloadOutlinedIcon fontSize="inherit" />}
         text={"View Resume"}
@@ -42,19 +42,30 @@ const Footer = ({darkMode, displayForMobile, displayForPC}) => {
         <GitHubIcon
           fontSize="inherit"
           onClick={() => {
-            console.log("to github");
+            window.open(
+              "https://github.com/Andrew920528",
+              "_blank",
+              "noopener,noreferrer"
+            );
           }}
         />
         <LinkedInIcon
           fontSize="inherit"
           onClick={() => {
-            console.log("to linkedin");
+            window.open(
+              "https://www.linkedin.com/in/andrew-hsu-71b020/",
+              "_blank",
+              "noopener,noreferrer"
+            );
           }}
         />
         <EmailRoundedIcon
           fontSize="inherit"
           onClick={() => {
-            console.log("to mail");
+            window.open(
+              `https://mail.google.com/mail/?view=cm&to=${EMAIL}&su=Hello`,
+              "_blank"
+            );
           }}
         />
       </div>
