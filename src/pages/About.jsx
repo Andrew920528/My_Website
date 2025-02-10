@@ -10,11 +10,16 @@ const About = forwardRef(({hide}, ref) => {
   const GoalsContent = () => (
     <div className="goals">
       <p>
-        I am an aspiring full-stack developer driven by the goal of making a
-        real-world impact through software development. I developed a passion
-        for coding and honed my skills in technologies like{" "}
-        <strong>React </strong>and <strong>Flask</strong> through past
-        internships, where I worked on computer vision and IoT technology.
+        I'm an aspiring full-stack developer with a goal to create software that
+        makes a real-world impact. My passion for development grew through
+        internships focused on computer vision and IoT technology, where I
+        gained experience with tools like <srong>React</srong> and{" "}
+        <strong>Flask</strong>. Outside of tech, I enjoy drawing and playing
+        basketball, which help me stay creative and active. I was also the
+        president of the Taiwanese Student Association at Georgia Tech, where I
+        led initiatives to connect students and foster a supportive community.
+        I’m excited to continue building my skills and contribute to meaningful
+        software development.
       </p>
     </div>
   );
