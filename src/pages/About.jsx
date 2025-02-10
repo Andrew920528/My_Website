@@ -10,11 +10,11 @@ const About = forwardRef(({hide}, ref) => {
   const GoalsContent = () => (
     <div className="goals">
       <p>
-        I am an aspiring full-stack developer with the goal to make a real world
-        impact through developing software. I adopted the passion and skill for
-        software development, such as <strong>React</strong>
-        and <strong>Flask</strong>, through my past internships working on
-        computer vision and IOT technology.
+        I am an aspiring full-stack developer driven by the goal of making a
+        real-world impact through software development. I developed a passion
+        for coding and honed my skills in technologies like{" "}
+        <strong>React </strong>and <strong>Flask</strong> through past
+        internships, where I worked on computer vision and IoT technology.
       </p>
     </div>
   );
